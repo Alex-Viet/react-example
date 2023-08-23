@@ -1,22 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createGlobalStyle } from "styled-components";
+import { Button } from "./components/button";
+import { SubmitButton } from "./components/submit-button";
+
+// Нельзя использовать Styled components в теле рендер функции. Это замедлит весь рендер из-за их постоянного обновления
+// Хорошей практикой считается вынести Styled comps в отдельный js файл
+const GlobalStyles = createGlobalStyle`
+body {
+  margin: 0;
+  padding: 0;
+  background: teal;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+`;
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyles />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Button> Normal Button </Button>
+        <Button primary={true}> Primary Button </Button>
+        <SubmitButton />
       </header>
     </div>
   );
