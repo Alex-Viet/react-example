@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const StyledButton = styled.button`
+export const Button = styled.button`
   color: ${(props) => (props.$primary ? "white" : "palevioletred")};
   background-color: ${(props) => (props.$primary ? "palevioletred" : "white")};
   font-size: 20px;

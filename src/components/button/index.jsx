@@ -1,5 +1,9 @@
-import { StyledButton } from "./styles";
+import * as Styled from "./styles";
 
 export function Button({ className, children, primary }) {
-  return <StyledButton className={className} $primary={primary}>{children}</StyledButton>;
+  return (
+    <Styled.Button className={className} $primary={primary}>
+      {children}
+    </Styled.Button>
+  );
 }
